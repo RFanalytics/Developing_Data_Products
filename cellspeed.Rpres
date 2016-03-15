@@ -1,0 +1,94 @@
+
+<style>  body  {
+                 background-color: #B0C4DE;
+                 font-color:black;
+                }
+</style>  
+
+<STYLE type=text/css>
+              {
+                COLOR: black
+              }
+</style>
+
+CellSpeed
+=======================================================
+author: RFanalytics
+date: March 2016
+
+Target Audience
+========================================================
+A uniqe application - designed to demonstrate impact of many variable choices when operating
+an LTE (4G) wireless network
+
+Target Audience within the Wireless Business:
+
+- Owners of wireless spectrum 
+- Executives who manage staffs operating wireless networks
+- Entry level Engineers wanting to learn the business
+- Marketing staff to develop understanding of product limits and tradeoffs
+- Easy Customer Service tool to estimate expected customer experience
+- Curious wireless users
+
+Develop Strategy Through Intuition
+========================================================
+There are many design criteria that go into the development of a wireless network.
+
+It is helpful for disciplines other than engineering to gain an understanding of 
+some key design parameters.  This will allow the development of intuition that can
+be productively leveraged into other aspects of the wireless business to assist in 
+strategy and problem resolution.  
+
+The CellSpeed web application tool is a new way to bridge understanding between radio
+engineering and other disciplines.  
+
+Users can enter key design parameters and reactively witness the effect on the network performance.
+
+
+Develop Intuition Through Interaction
+========================================================
+Design parameters under control of the user are:
+- Number of users on cell site
+- LTE channel size
+- Base Station Frequency
+- Height of cell tower
+- User distance from cell tower
+- Base station transmitter power
+- Antenna gain
+
+Network attributes such as radio signal loss and download speed can be learned.
+
+Detailed user instructions are included in the application.
+
+Interact with our App!
+========================================================
+At the heart of the tool is the Egli radio prediction algorithm.  Details on this
+modeling approach can be learned [here](http://www.softwright.com/faq/engineering/prop_egli.html). Detailed outputs and interactive graphs, as shown can be created.
+
+
+
+```{r, echo=FALSE}
+distance <- seq(.1, 3, by = .1)
+signal   <- round(117 + 40*log10(distance) + 
+            20*log10(885) - 
+            20*log10(100*5),1)*-1
+graph    <- data.frame(distance,signal)
+```
+
+```{r, eval=FALSE}
+plot(graph, xlab = "Dist from tower(mi)",
+     ylab = "Loss (dB)", 
+     main = "Radio Signal Loss",
+     type = "b", col = "blue")
+```
+***
+```{r, echo=FALSE}
+plot(graph, xlab = "Dist from tower(mi)",
+     ylab = "Loss (dB)", 
+     main = "Radio Signal Loss",
+     type = "b", col = "blue")
+```
+
+<div class="footer">
+Try the CellSpeed Application Today!
+</div>
